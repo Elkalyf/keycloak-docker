@@ -8,9 +8,9 @@ EXPOSE 8080
 ENV KEYCLOAK_ADMIN=admin
 ENV KEYCLOAK_ADMIN_PASSWORD=admin
 
-# Copy the entrypoint script
-COPY entrypoint.sh /usr/local/bin/entrypoint.sh
-RUN chmod +x /usr/local/bin/entrypoint.sh
+# Copy the entrypoint script with executable permissions
+COPY --chmod=0755 entrypoint.sh /usr/local/bin/entrypoint.sh
 
 # Use the entrypoint script
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+
