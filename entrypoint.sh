@@ -8,6 +8,6 @@ exec /opt/keycloak/bin/kc.sh start --optimized \
   --http-port=$PORT \
   --hostname=https://keycloak-docker-rxfn.onrender.com \
   --hostname-strict=false \
-  --https-protocols=
+
 
 
