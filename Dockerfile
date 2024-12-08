@@ -8,11 +8,8 @@ ENV KC_BOOTSTRAP_ADMIN_PASSWORD=your_password
 # Expose default port (for local testing)
 EXPOSE 8080
 
-# Add entrypoint script to a writable directory
-COPY entrypoint.sh /usr/local/bin/entrypoint.sh
-
-# Ensure the script is executable
-RUN chmod +x /usr/local/bin/entrypoint.sh
+# Add entrypoint script with executable permissions
+COPY --chmod=0755 entrypoint.sh /usr/local/bin/entrypoint.sh
 
 # Use entrypoint script
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
