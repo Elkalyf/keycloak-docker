@@ -1,5 +1,6 @@
 # Use the official Keycloak image
-FROM quay.io/keycloak/keycloak:latest
+FROM quay.io/keycloak/keycloak:21.1.1
+
 
 # Set admin credentials
 ENV KC_BOOTSTRAP_ADMIN_USERNAME=admin
