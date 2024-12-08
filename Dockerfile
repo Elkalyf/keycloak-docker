@@ -1,15 +1,11 @@
-# Use the official Keycloak image
-FROM quay.io/keycloak/keycloak:21.1.1
+FROM quay.io/keycloak/keycloak:latest
 
-# Set admin credentials
-ENV KC_BOOTSTRAP_ADMIN_USERNAME=admin
-ENV KC_BOOTSTRAP_ADMIN_PASSWORD=admin
-
-# Expose default port (for local testing)
+# Expose the default Keycloak port
 EXPOSE 8080
 
-# Add entrypoint script with executable permissions
-COPY --chmod=0755 entrypoint.sh /usr/local/bin/entrypoint.sh
+# Set Keycloak admin credentials
+ENV KEYCLOAK_ADMIN=admin
+ENV KEYCLOAK_ADMIN_PASSWORD=admin
 
-# Use entrypoint script
-ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+# Start Keycloak in development mode
+CMD ["start-dev"]
