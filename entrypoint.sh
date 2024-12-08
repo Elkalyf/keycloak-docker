@@ -10,6 +10,6 @@ exec /opt/keycloak/bin/kc.sh start-dev \
   --hostname-strict=false \
   -Djboss.bind.address=0.0.0.0 \
   --db=postgres \
-  --db-url=${db-url} \
-  --db-username=${db-username} \
-  --db-password=${db-password}
+  --db-url=${db_url} \
+  --db-username=${db_username} \
+  --db-password=${db_password}
