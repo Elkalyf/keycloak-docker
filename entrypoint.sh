@@ -5,6 +5,7 @@ PORT=${PORT:-10000}
 
 # Start Keycloak with PostgreSQL
 exec /opt/keycloak/bin/kc.sh start-dev \
+  --verbose \
   --http-port=$PORT \
   --hostname=keycloak-docker-rxfn.onrender.com \
   --hostname-strict=false \
