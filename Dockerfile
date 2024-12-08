@@ -1,10 +1,6 @@
 # Use the official Keycloak image
 FROM quay.io/keycloak/keycloak:21.1.1
 
-# Set admin credentials
-ENV KC_BOOTSTRAP_ADMIN_USERNAME=admin
-ENV KC_BOOTSTRAP_ADMIN_PASSWORD=admin
-
 # Expose default port (for local testing)
 EXPOSE 8080
 
