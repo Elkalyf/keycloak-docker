@@ -13,3 +13,8 @@ COPY --chmod=0755 entrypoint.sh /usr/local/bin/entrypoint.sh
 
 # Use entrypoint script
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+
+
+COPY tls/cert.pem /opt/keycloak/conf/tls.crt
+COPY tls/key.pem /opt/keycloak/conf/tls.key
+
