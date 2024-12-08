@@ -1,0 +1,12 @@
+# Ignore Docker build files
+*.log
+*.tmp
+*.bak
+
+# Ignore node_modules and dependency folders
+node_modules/
+dist/
+build/
+
+# Ignore environment files
+.env
