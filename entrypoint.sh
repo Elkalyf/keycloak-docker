@@ -12,7 +12,7 @@ exec /opt/keycloak/bin/kc.sh start \
      --hostname=keycloak-docker-rxfm.onrender.com \
      --hostname-strict=false \
      --http-enabled=true \
-     --proxy-headers=xforwarded \
+     --proxy=edge \
      --verbose
 
 
