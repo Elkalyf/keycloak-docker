@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Use Render's PORT variable, defaulting to 8080
-PORT=${PORT:-8080}
+PORT=${PORT:-10000}
 
 # Start Keycloak with H2 database
 exec /opt/keycloak/bin/kc.sh start-dev
