@@ -9,11 +9,11 @@ PORT=${PORT:-10000}
 # Start the Keycloak server
 exec /opt/keycloak/bin/kc.sh start \
     --http-port=$PORT \
-    --hostname=keycloak-docker-rxfm.onrender.com \
+    --hostname=keycloak-docker-rxfn.onrender.com \
     --hostname-strict=false \
     --http-enabled=true \
     --spi-hostname-default=0.0.0.0 \
-    --spi-cors-allowed-origin-pattern=https://keycloak-docker-rxfm.onrender.com \
+    --spi-cors-allowed-origin-pattern=https://keycloak-docker-rxfn.onrender.com \
     --log-level=DEBUG \
     --cache=local \
     --verbose
