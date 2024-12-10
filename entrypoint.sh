@@ -12,5 +12,6 @@ exec /opt/keycloak/bin/kc.sh start \
     --hostname=${RENDER_EXTERNAL_HOSTNAME:-localhost} \
     --hostname-strict=false \
     --http-enabled=true \
+    --cache=local \
     --verbose \
    
