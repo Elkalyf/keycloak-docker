@@ -8,7 +8,7 @@ PORT=${PORT:-10000}
 
 # Start the Keycloak server with proper binding
 exec /opt/keycloak/bin/kc.sh start \
-    --http-port=$PORT \ # This should be clean with no spaces
+    --http-port=$PORT \
     --hostname=${RENDER_EXTERNAL_HOSTNAME:-localhost} \
     --hostname-strict=false \
     --http-enabled=true \
