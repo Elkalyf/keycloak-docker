@@ -1,8 +1,6 @@
 # Use the official Keycloak image
 FROM quay.io/keycloak/keycloak:latest
 
-# Add PostgreSQL JDBC driver
-ADD https://jdbc.postgresql.org/download/postgresql-42.5.0.jar /opt/keycloak/providers/
 
 # Set admin credentials
 ENV KEYCLOAK_ADMIN=admin
