@@ -9,7 +9,7 @@ PORT=${PORT:-10000}
 # Start Keycloak with the correct binding
 exec /opt/keycloak/bin/kc.sh start \
     --http-port=$PORT \
-    --hostname="${RENDER_EXTERNAL_HOSTNAME:-0.0.0.0}" \
+    --hostname=0.0.0.0 \
     --hostname-strict=false \
     --http-enabled=true \
     --cache=local \
