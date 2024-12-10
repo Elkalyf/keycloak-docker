@@ -1,17 +1,13 @@
 #!/bin/bash
 
-# Use Render's PORT variable, defaulting to 10000
-PORT=${PORT:-10000}
+# Use Render's PORT variable, defaulting to 8080
+PORT=${PORT:-8080}
 
-# Start Keycloak with PostgreSQL
+# Start Keycloak with H2 database
 exec /opt/keycloak/bin/kc.sh start-dev \
-  --http-port=$PORT \
-  --hostname=keycloak-docker-rxfn.onrender.com \
+  --http-port=${PORT} \
+  --hostname=keycloak-docker-rxfm.onrender.com \
   --hostname-strict=false \
   -Djboss.bind.address=0.0.0.0 \
-  --db=postgres \
-  --db-url=${db_url} \
-  --db-username=${db_username} \
-  --db-password=${db_password}
+  --db=h2 \
   --verbose
-
