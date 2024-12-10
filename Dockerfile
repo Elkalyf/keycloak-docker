@@ -8,7 +8,7 @@ ENV KEYCLOAK_ADMIN_PASSWORD=admin
 COPY --chmod=0755 entrypoint.sh /usr/local/bin/entrypoint.sh
 
 # Expose Keycloak ports
-EXPOSE 8443
+EXPOSE 1000
 
 # Use the custom entrypoint script
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
