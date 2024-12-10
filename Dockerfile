@@ -4,6 +4,9 @@ FROM quay.io/keycloak/keycloak:latest
 ENV KEYCLOAK_ADMIN=admin
 ENV KEYCLOAK_ADMIN_PASSWORD=admin
 
+EXPOSE 10000
+
+
 # Add entrypoint script
 COPY --chmod=0755 entrypoint.sh /usr/local/bin/entrypoint.sh
 
