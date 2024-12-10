@@ -9,4 +9,5 @@ exec /opt/keycloak/bin/kc.sh start-dev
   --hostname=keycloak-docker-rxfm.onrender.com \
   --hostname-strict=false \
   -Djboss.bind.address=0.0.0.0 \
+  -Djboss.bind.address.management=0.0.0.0 \
   --verbose
