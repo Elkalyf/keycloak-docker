@@ -4,7 +4,7 @@
 PORT=${PORT:-10000}
 
 # Start Keycloak with H2 database
-exec /opt/keycloak/bin/kc.sh start-dev
+exec /opt/keycloak/bin/kc.sh start \
   --http-port=${PORT} \
   --hostname=keycloak-docker-rxfm.onrender.com \
   --hostname-strict=false \
