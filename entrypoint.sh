@@ -6,12 +6,15 @@ PORT=${PORT:-10000}
 # Build the Keycloak server
 /opt/keycloak/bin/kc.sh build
 
-# Start the Keycloak server
+# Start the Keycloak server with proper binding
 exec /opt/keycloak/bin/kc.sh start \
     --http-port=$PORT \
     --hostname=${RENDER_EXTERNAL_HOSTNAME:-localhost} \
     --hostname-strict=false \
     --http-enabled=true \
     --cache=local \
-    --verbose \
-   
+    --spi-hostname-default=0.0.0.0 \
+    --spi-hostname-strict-backchannel=false \
+    --verbose 
+
+
