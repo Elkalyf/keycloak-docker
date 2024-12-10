@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Use Render's PORT variable (default to 10000 if not set)
-PORT=${PORT:-10000}
+PORT=${PORT:-8843}
 
 # Build the Keycloak server
 /opt/keycloak/bin/kc.sh build
