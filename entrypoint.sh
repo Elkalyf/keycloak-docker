@@ -13,4 +13,4 @@ exec /opt/keycloak/bin/kc.sh start \
     --hostname-strict=false \
     --http-enabled=true \
     --verbose \
-    --bind-address=0.0.0.0
+   
