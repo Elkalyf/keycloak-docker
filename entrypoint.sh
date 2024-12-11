@@ -1,16 +1,18 @@
 #!/bin/bash
 
-# Use Render's PORT variable, defaulting to 10000
+# Use the port provided by the environment or default to 10000
 PORT=${PORT:-10000}
 
-# Build the Keycloak server
-/opt/keycloak/bin/kc.sh build --optimized
+# Set Keycloak environment variables
+export JAVA_OPTS="-Dquarkus.http.host=0.0.0.0 -Dquarkus.http.port=${PORT}"
 
-# Start the Keycloak server
+# Start Keycloak
 exec /opt/keycloak/bin/kc.sh start \
-     --http-port=$PORT \
-     --hostname=keycloak-docker-rxfm.onrender.com \
-     --hostname-strict=false \
-     --verbose
-
-  
+    --http-port=${PORT} \
+    --https-port=8443 \
+    --https-certificate-file=/ssl/cert.pem \
+    --https-certificate-key-file=/ssl/key.pem \
+    --hostname-strict=false \
+    --http-enabled=true \
+    --cache=local \
+    --log-level=DEBUG
