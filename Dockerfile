@@ -1,5 +1,14 @@
 FROM quay.io/keycloak/keycloak:latest
 
+# Add SSL certificates
+COPY ssl/ /ssl/
+
+# Expose both HTTP and HTTPS ports
+EXPOSE 10000
+EXPOSE 8443
+
+
+
 # Set admin credentials
 ENV KEYCLOAK_ADMIN=admin
 ENV KEYCLOAK_ADMIN_PASSWORD=admin
