@@ -1,18 +1,18 @@
 #!/bin/bash
 
-# Use the port provided by the environment or default to 10000
+# Use Render's PORT variable, defaulting to 10000
 PORT=${PORT:-10000}
 
-# Set Keycloak environment variables
-export JAVA_OPTS="-Dquarkus.http.host=0.0.0.0 -Dquarkus.http.port=${PORT}"
+# Set Keycloak server options
+export JAVA_OPTS="-Djava.net.preferIPv4Stack=true -Dkeycloak.profile.feature.upload_scripts=enabled"
 
-# Start Keycloak
+# Start the Keycloak server with HTTPS enabled
 exec /opt/keycloak/bin/kc.sh start \
-    --http-port=${PORT} \
+    --http-port=$PORT \
     --https-port=8443 \
-    --https-certificate-file=/ssl/cert.pem \
-    --https-certificate-key-file=/ssl/key.pem \
+    --https-certificate-file=/etc/x509/https/cert.pem \
+    --https-certificate-key-file=/etc/x509/https/key.pem \
+    --hostname=keycloak-docker-rxfm.onrender.com \
     --hostname-strict=false \
-    --http-enabled=true \
-    --cache=local \
+    --verbose
     --log-level=DEBUG
