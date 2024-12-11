@@ -12,7 +12,7 @@ exec /opt/keycloak/bin/kc.sh start \
     --https-port=$PORT \
     --https-certificate-file=/etc/x509/https/cert.pem \
     --https-certificate-key-file=/etc/x509/https/key.pem \
-    --hostname=keycloak-docker-rxfm.onrender.com \
+    --hostname=keycloak-docker-rxfn.onrender.com \
     --hostname-strict=false \
     --verbose
     --log-level=DEBUG
